@@ -1,0 +1,55 @@
+
+<div class="forms">
+     <label>Email id:<input [(ngModel)]="emailid" type="email" value="" placeholder=""></label>
+     <label>Phone no:<input  [(ngModel)]="phonenumber" type="number" value="" placeholder="phonenumber"> </label>
+    <!-- <input  [(ngModel)]="country"> -->
+    <label>Country:<select [(ngModel)]="country">
+        <option *ngFor="let country of countries" value={{country}}>
+          {{country}}
+        </option>
+      </select>
+    </label>
+    <br>
+
+    <label>Company:<input  [(ngModel)]="company" type="text" value="" placeholder="company"></label>
+      <label>Gender:</label>
+    <input  [(ngModel)]="gender" type="radio" name="gender" value="Male">
+    <label for ="Male">Male</label>
+
+    <input  [(ngModel)]="gender" type="radio" name="gender" value="Female">
+    <label for ="Female">Female</label>
+
+    <input  [(ngModel)]="gender" type="radio" name="gender" value="Other">
+    <label for ="Other">Other</label>
+
+
+    <label>  DOB:<input   [(ngModel)]="dob" type="date" value="" placeholder="dob"></label>
+    <br>
+
+    <label>Insurance: <input  [(ngModel)]="insurance" type="number" value="" placeholder="insurance"></label>
+    <label>Network: <input   [(ngModel)]="network"  type="text" value="" placeholder="network"> </label>
+
+<button (click)="addUser()">Save user</button> 
+</div>
+
+<h3 class="text-center">User List</h3>
+<table class="table-striped" style="margin:0 auto;" *ngIf="users">
+<tr><th> User Id</th> <th>Email Id</th><th>Phone no</th><th>Company</th><th>Country</th><th>Gender</th><th>DOB</th><th>Insurance</th><th>Netowrk</th></tr>
+<tr *ngFor="let user of users " >
+    
+<td>{{user.userId}}</td> <td>{{user.emailId}}</td> <td>{{user.mobileNo}}</td><td>{{ user.company}}</td> <td>{{ user.country}}</td> <td>{{ user.gender}}</td> <td>{{ user.dob | date:'dd-MM-yyyy'}}</td> <td>{{ user.insurance}}</td> <td>{{ user.network}}</td>
+
+
+</tr>
+</table>
+
+<!-- <br>
+<button (click)="getAllUser()">get user</button>
+{{ users | json}} -->
+
+
+
+
+
+
+

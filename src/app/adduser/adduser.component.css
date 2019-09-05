@@ -1,0 +1,10 @@
+.table-striped{
+    border-collapse: collapse;
+}
+
+.table-striped th,td{
+
+    border: 0.01rem solid black;
+    text-align: center
+
+}
